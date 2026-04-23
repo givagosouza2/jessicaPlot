@@ -1,28 +1,17 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+import plotly.express as px
 
-st.set_page_config(page_title="Vídeo + Cinemática", layout="centered")
+st.title("Vídeo + Cinemática específica")
 
-st.title("Vídeo e cinemática do movimento")
-
-# URL do vídeo
 video_url = "https://youtu.be/KrsJxEfyyVM"
 st.video(video_url)
 
-st.subheader("Gráfico da cinemática do movimento")
+# Importando apenas colunas específicas
+df = pd.read_csv("cinematica.csv", usecols=[0, 9, 10, 11])
 
-# Arquivo CSV com os dados cinemáticos
-df = pd.read_csv("cinematica.csv")
+df.columns = ["tempo", "x", "y", "z"]
 
-fig, ax = plt.subplots(figsize=(10, 4))
-ax.plot(df["tempo"], df["x"], label="X")
-ax.plot(df["tempo"], df["y"], label="Y")
-ax.plot(df["tempo"], df["z"], label="Z")
-ax.set_xlabel("Tempo (s)")
-ax.set_ylabel("Amplitude")
-ax.set_title("Séries temporais da cinemática")
-ax.legend()
-ax.grid(True)
+fig = px.line(df, x="tempo", y=["x", "y", "z"])
 
-st.pyplot(fig)
+st.plotly_chart(fig, use_container_width=True)
