@@ -13,12 +13,18 @@ st.video(video_url)
 df = pd.read_csv("cinematica.csv", usecols=[0, 9, 10, 11])
 
 df.columns = ["tempo", "x", "y", "z"]
-
+z = df["z"]
+t = df["tempo"]
+peak_z = pd.max(z)
+for index,valor in z:
+    if valor == peak_z:
+        tempo = t - t[index]
+        break
 # Plot apenas do eixo Z
 fig = px.line(
     df,
-    x="tempo",
-    y="z",
+    x=tempo,
+    y=z,
     labels={"tempo": "Tempo (s)", "z": "Amplitude"},
     title="Cinemática - eixo Z"
 )
