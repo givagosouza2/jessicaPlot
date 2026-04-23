@@ -17,7 +17,7 @@ df.columns = ["tempo", "x", "y", "z"]
 z = df["z"]
 t = df["tempo"]
 peak_z = np.max(z)
-for index,valor in z:
+for index,valor in enumerate(z):
     if valor == peak_z:
         tempo = t - t[index]
         break
