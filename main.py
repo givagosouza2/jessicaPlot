@@ -10,23 +10,23 @@ st.title("Análise de movimento por participante")
 # 🔹 Dicionário com dados de cada pessoa
 dados = {
     "Aristacho": {
-        "video": "https://www.youtube.com/watch?v=VIDEO1",
+        "video": "https://youtu.be/KrsJxEfyyVM",
         "csv": "aristacho.csv"
     },
     "Carmem": {
-        "video": "https://www.youtube.com/watch?v=VIDEO2",
+        "video": "https://youtu.be/0VMtsdwf8ns",
         "csv": "carmem.csv"
     },
     "Isabel": {
-        "video": "https://www.youtube.com/watch?v=VIDEO3",
+        "video": "https://youtu.be/hODABKKUWq0",
         "csv": "isabel.csv"
     },
     "Orlando": {
-        "video": "https://www.youtube.com/watch?v=VIDEO4",
+        "video": "https://youtu.be/V-j6muEi6lg",
         "csv": "orlando.csv"
     },
     "Therezinha": {
-        "video": "https://www.youtube.com/watch?v=VIDEO5",
+        "video": "https://youtu.be/Jutzpg-CssQ",
         "csv": "therezinha.csv"
     }
 }
