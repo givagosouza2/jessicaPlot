@@ -12,6 +12,13 @@ df = pd.read_csv("cinematica.csv", usecols=[0, 9, 10, 11])
 
 df.columns = ["tempo", "x", "y", "z"]
 
-fig = px.line(df, x="tempo", y=["x", "y", "z"])
+# Plot apenas do eixo Z
+fig = px.line(
+    df,
+    x="tempo",
+    y="z",
+    labels={"tempo": "Tempo (s)", "z": "Amplitude"},
+    title="Cinemática - eixo Z"
+)
 
 st.plotly_chart(fig, use_container_width=True)
