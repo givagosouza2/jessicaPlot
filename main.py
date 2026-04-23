@@ -52,7 +52,7 @@ with col2:
     df.columns = ["tempo", "x", "y", "z"]
     z = df["z"]
     t = df["tempo"]
-    peak_z = np.max(z)
+    peak_z = np.max(z[0:2000])
     for index,valor in enumerate(z):
         if valor == peak_z:
             tempo = t - t[index]
